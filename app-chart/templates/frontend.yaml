@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-frontend
+
+spec:
+  selector:
+    matchLabels:
+      app: kube-frontend
+  
+  template:
+    metadata:
+      labels:
+        app: kube-frontend
+    
+    spec:
+      containers:
+      - name: kube-frontend
+  
+        image: docker.io/7suryansh/kube_frontend
+        ports:
+        - containerPort: 9000
+        env:
+        - name: BACKEND_URL
+          value: http://kube-backend.default.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-frontend
+spec:
+  selector:
+    app: kube-frontend
+  ports:
+  - port: 80
+    targetPort: 9000
+

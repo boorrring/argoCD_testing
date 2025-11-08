@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-backend
+spec:
+  selector:
+    matchLabels:
+      app: kube-backend
+  
+  template:
+    metadata:
+      labels:
+        app: kube-backend
+    
+    spec:
+      containers:
+      - name: kube-backend
+  
+        image: docker.io/7suryansh/kube_backend
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MONGO_HOST
+          value: mongo.default.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-backend
+spec:
+  selector:
+    app: kube-backend
+  ports:
+  - port: 80
+    targetPort: 8000
+

@@ -1,0 +1,64 @@
+Artifacthub.io -- for kubernetes
+dockerhub -- for docker container
+
+
+
+Helm Commands:
+
+
+helm list  ...  ( list of releases (installed charts)) 
+
+
+helm create app-chart .....( will create a template for helm charts)
+
+helm intall App-name app-chart ......... (its like giving the name of the the folder which is 'App-name'  )
+
+helm upgrade [RELEASE_NAME] [CHART] ....... to update
+
+
+helm template chart_name ......... ( to see if anychange is reflected in our backend or not)
+
+
+
+
+
+
+
+
+
+What is Helm?
+
+Helm is a package manager for Kubernetes.
+
+Think of it like apt for Linux or npm for JavaScript, but specifically for Kubernetes. It helps you install, configure, and manage applications in Kubernetes clusters easily.
+
+Why Use Helm?
+
+When you run apps in Kubernetes, you often need to manage a lot of complex configurations. Things like:
+
+Which Docker images to use
+
+What environment variables the app needs
+
+How many replicas (copies) of the app you need
+
+Which services to expose
+
+Without Helm, you’d have to manually write a bunch of YAML files to set all that up, which can be a lot of work and can get messy fast.
+
+What Helm Does:
+
+Packages Apps: Helm allows you to package applications into Helm charts. A chart is like a "blueprint" that defines all the Kubernetes resources (like Pods, Services, ConfigMaps, etc.) required to run an app.
+
+Installs Apps: With Helm, you can install a packaged chart into your Kubernetes cluster with just a single command. Helm will automatically create all the necessary resources for you.
+
+Manages and Updates: Helm makes it easy to update, roll back, or uninstall apps, so you don’t need to manually deal with YAML files every time you make changes.
+
+
+
+
+
+
+
+
+
