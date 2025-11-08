@@ -1,6 +1,7 @@
 # Deployment on Kubernetes Example (backend + frontend + Mongo)
 
- Link to visual overview : [https://excalidraw.com/#json=LmUZaGPrfEtqP6fgNM5Lr,_QmZmJ1fXIGiNRSRsCRG0A]
+ Visual overview : https://excalidraw.com/#json=LmUZaGPrfEtqP6fgNM5Lr,_QmZmJ1fXIGiNRSRsCRG0A
+ 
 Minimal instructions to run this project locally (Docker) or on Kubernetes (minikube).
 
 Prerequisites
@@ -34,8 +35,8 @@ Run with minikube (recommended for k8s)
    kubectl get svc
 
 5. Port-forward for local access:
-   # Frontend: access at http://localhost:5000
-   kubectl port-forward service/kube-frontend 5000:80
+   # Frontend: access at http://localhost:9000
+   kubectl port-forward service/kube-frontend 9000:80
 
    # Backend: access at http://localhost:8000
    kubectl port-forward service/kube-backend 8000:80
