@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: kube-frontend
-  
+  replicas: 2
   template:
     metadata:
       labels:
